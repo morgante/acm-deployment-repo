@@ -1,0 +1,22 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: base
+  annotations:
+    configmanagement.gke.io/managed: disabled
+upstream:
+  type: git
+  git:
+    commit: d8921d0e0c5122fce754008e659abe43877464eb
+    repo: https://github.com/morgante/acm-base-repo
+    directory: cluster-config
+    ref: main
+packageMetadata:
+  shortDescription: Base config for Environs
+openAPI:
+  definitions:
+    io.k8s.cli.setters.username:
+      x-k8s-cli:
+        setter:
+          name: username
+          value: tenant-user@example.com

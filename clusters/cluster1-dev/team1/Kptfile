@@ -1,0 +1,23 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: tenant
+  annotations:
+    configmanagement.gke.io/managed: disabled
+upstream:
+  type: git
+  git:
+    commit: b8e20b59a6254dbc979c152c8769d9886f257c05
+    repo: https://github.com/bgrant0607/csp-config-management
+    directory: environ/tenant
+    ref: 1.0.0
+packageMetadata:
+  shortDescription: sample description
+openAPI:
+  definitions:
+    io.k8s.cli.setters.name:
+      x-k8s-cli:
+        setter:
+          name: name
+          value: team1
+          isSet: true
