@@ -19,4 +19,5 @@ openAPI:
       x-k8s-cli:
         setter:
           name: cluster
-          value: cluster-name
+          value: cluster1-dev
+          isSet: true
