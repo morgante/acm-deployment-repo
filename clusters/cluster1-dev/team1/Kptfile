@@ -18,6 +18,6 @@ openAPI:
     io.k8s.cli.setters.name:
       x-k8s-cli:
         setter:
+          isSet: true
           name: name
           value: team1
-          isSet: true

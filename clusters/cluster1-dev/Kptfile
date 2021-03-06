@@ -7,16 +7,16 @@ metadata:
 upstream:
   type: git
   git:
-    commit: d8921d0e0c5122fce754008e659abe43877464eb
+    commit: aa2904741fa25e2457d3ad7be8be17d827a5e209
     repo: https://github.com/morgante/acm-base-repo
     directory: cluster-config
     ref: main
 packageMetadata:
-  shortDescription: Base config for Environs
+  shortDescription: Base config for all clusters
 openAPI:
   definitions:
-    io.k8s.cli.setters.username:
+    io.k8s.cli.setters.cluster:
       x-k8s-cli:
         setter:
-          name: username
-          value: tenant-user@example.com
+          name: cluster
+          value: cluster-name

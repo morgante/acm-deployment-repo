@@ -4,7 +4,7 @@ metadata:
   name: namespace-readers
 subjects:
 - kind: User
-  name: tenant-user@example.com # {"$kpt-set":"username"}
+  name: tenant-user@example.com
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole
