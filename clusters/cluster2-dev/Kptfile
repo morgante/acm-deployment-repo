@@ -1,0 +1,23 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: base
+  annotations:
+    configmanagement.gke.io/managed: disabled
+upstream:
+  type: git
+  git:
+    commit: 5e586af06781122e68e025e88abb416a97fcbf7d
+    repo: https://github.com/morgante/acm-base-repo
+    directory: cluster-config
+    ref: dev
+packageMetadata:
+  shortDescription: Base config for all clusters
+openAPI:
+  definitions:
+    io.k8s.cli.setters.cluster:
+      x-k8s-cli:
+        setter:
+          name: cluster
+          value: cluster2-dev
+          isSet: true

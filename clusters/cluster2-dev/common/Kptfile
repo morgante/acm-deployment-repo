@@ -1,0 +1,31 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: common
+  annotations:
+    configmanagement.gke.io/managed: disabled
+packageMetadata:
+  shortDescription: Common config
+openAPI:
+  definitions:
+    io.k8s.cli.setters.cluster:
+      x-k8s-cli:
+        setter:
+          name: cluster
+          value: cluster-name
+    io.k8s.cli.setters.domain:
+      x-k8s-cli:
+        setter:
+          name: domain
+          value: "example.org"
+          isSet: true
+    io.k8s.cli.substitutions.tenant-user:
+      x-k8s-cli:
+        substitution:
+          name: tenant-user
+          pattern: tenant-${cluster}@${domain}
+          values:
+          - marker: ${cluster}
+            ref: '#/definitions/io.k8s.cli.setters.cluster'
+          - marker: ${domain}
+            ref: '#/definitions/io.k8s.cli.setters.domain'
