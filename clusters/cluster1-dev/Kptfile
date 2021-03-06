@@ -10,7 +10,7 @@ upstream:
     commit: 5f4f278fc05c3dd38793eee37a4836ffcb803ab1
     repo: https://github.com/morgante/acm-base-repo
     directory: cluster-config
-    ref: main
+    ref: dev
 packageMetadata:
   shortDescription: Base config for all clusters
 openAPI:
