@@ -7,7 +7,7 @@ metadata:
 upstream:
   type: git
   git:
-    commit: 5f4f278fc05c3dd38793eee37a4836ffcb803ab1
+    commit: 5e586af06781122e68e025e88abb416a97fcbf7d
     repo: https://github.com/morgante/acm-base-repo
     directory: cluster-config
     ref: dev
@@ -18,6 +18,6 @@ openAPI:
     io.k8s.cli.setters.cluster:
       x-k8s-cli:
         setter:
+          isSet: true
           name: cluster
           value: cluster1-dev
-          isSet: true
